@@ -6,6 +6,10 @@ import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
 
+html {
+font-size: 62.5%;
+}
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

@@ -1,11 +1,14 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import {
   color,
   space,
   layout,
-  typography,
   flexbox,
+  grid,
+  background,
+  border,
   position,
+  typography,
 } from 'styled-system';
 
 // This is a default reusable box
@@ -18,7 +21,10 @@ export const Box = styled.div(
   color,
   space,
   layout,
-  typography,
   flexbox,
-  position
+  grid,
+  background,
+  border,
+  position,
+  typography
 );
