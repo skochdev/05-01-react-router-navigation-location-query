@@ -15,11 +15,7 @@ function App() {
             path='dashboard'
             element={
               <Box p={4} fontSize='1.6rem'>
-                <p>
-                  Learned about React Router. useParams, nested routes, index
-                  routes. Dynamic parameters for routes
-                </p>
-
+                <p>Dashboard page</p>
                 <strong>Checkout sales/invoices route.</strong>
               </Box>
             }

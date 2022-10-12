@@ -7,6 +7,7 @@ import {
   BsPersonLinesFill,
 } from 'react-icons/bs';
 import { Box } from '../Box';
+import { Outlet } from 'react-router-dom';
 
 const navItems = [
   { href: 'dashboard', text: 'Dashboard', icon: BsStack },

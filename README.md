@@ -12,3 +12,5 @@
   - /reports
   - /feedback
   - /customers
+
+## Imperative navigation, query string, location object, code splitting
