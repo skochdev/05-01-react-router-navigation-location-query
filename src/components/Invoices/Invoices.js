@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as S from './Invoices.styled';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import { getInvoices } from '../../fakeAPI';
 import { Outlet } from 'react-router-dom';
 

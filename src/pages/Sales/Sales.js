@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import * as S from './Sales.styled';
-import { Box } from 'components/Box';
+import { Box } from 'components/Box/Box';
 
 const navItems = [
   { href: 'analytics', text: 'Analytics' },
