@@ -1,11 +1,5 @@
 import * as S from './AppBar.styled';
-import {
-  BsStack,
-  BsWalletFill,
-  BsBriefcaseFill,
-  BsChatLeftTextFill,
-  BsPersonLinesFill,
-} from 'react-icons/bs';
+import { BsStack, BsWalletFill, BsPersonLinesFill } from 'react-icons/bs';
 import { Box } from '../Box/Box';
 
 const navItems = [
