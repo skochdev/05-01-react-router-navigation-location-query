@@ -1,16 +1,18 @@
+import * as S from './FilterCustomers.styled';
+
 const FilterCustomers = ({ handleFilter, value }) => {
   return (
-    <div>
-      <label>
+    <S.Filter>
+      <S.Label>
         Filter customers
-        <input
+        <S.Input
           type='text'
           value={value}
-          placeholder="Start by entering a client's name"
+          placeholder="Client's name"
           onChange={(e) => handleFilter(e.target.value)}
         />
-      </label>
-    </div>
+      </S.Label>
+    </S.Filter>
   );
 };
 

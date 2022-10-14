@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import * as S from './Sales.styled';
 import { Box } from 'components/Box/Box';
 
@@ -8,7 +9,7 @@ const navItems = [
   { href: 'deposits', text: 'Deposits' },
 ];
 
-export const Sales = () => {
+const Sales = () => {
   return (
     <Box as='main' display='flex' flexDirection='column'>
       <Box as='header' borderBottom='1px solid black' p={4}>
@@ -20,7 +21,12 @@ export const Sales = () => {
           ))}
         </Box>
       </Box>
-      <Outlet />
+      <Suspense fallback={<div>Sales page is loading...</div>}>
+        <Outlet />
+      </Suspense>
     </Box>
   );
 };
+
+// lazy() method expects a loader function that returns the result of the dynamic import
+export default Sales;

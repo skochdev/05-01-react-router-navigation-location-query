@@ -14,3 +14,6 @@
   - /customers
 
 ## Imperative navigation, query string, location object, code splitting
+
+- lazy loading components
+- Suspense and code splitting (even though it's not particularly necessary)

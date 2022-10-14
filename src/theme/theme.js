@@ -37,4 +37,11 @@ export const theme = {
       lg: 'box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;',
     },
   },
+  breakpoints: {
+    xs: '0',
+    sm: '600px',
+    md: '960px',
+    lg: '1280px',
+    xl: '1920px',
+  },
 };

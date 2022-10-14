@@ -1,12 +1,22 @@
 import { GlobalStyle } from './GlobalStyle';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
 import { Layout } from './components/Layout/Layout';
-import { Sales } from './pages/Sales/Sales';
-import { Invoices } from './components/Invoices/Invoices';
 import InvoiceDetails from './components/InvoiceDetails/InvoiceDetails';
 import { Box } from './components/Box/Box';
-import Customers from './pages/Customers/Customers';
-import CustomerDetails from './pages/CustomerDetails/CustomerDetails';
+
+const Sales = lazy(() => import('./pages/Sales/Sales'));
+const Customers = lazy(() => import('./pages/Customers/Customers'));
+const CustomerDetails = lazy(() =>
+  import('./pages/CustomerDetails/CustomerDetails')
+);
+// Below is when we import named exports, above are default exports
+const Invoices = lazy(() =>
+  import('./components/Invoices/Invoices').then((module) => ({
+    ...module,
+    default: module.Invoices,
+  }))
+);
 
 function App() {
   return (
@@ -19,7 +29,7 @@ function App() {
             element={
               <Box p={4} fontSize='1.6rem'>
                 <p>Dashboard page</p>
-                <strong>Checkout sales/invoices route.</strong>
+                <strong>Checkout sales/invoices or Customers route.</strong>
               </Box>
             }
           />
@@ -39,8 +49,6 @@ function App() {
             </Route>
             <Route path='deposits' element={<div>Deposits</div>} />
           </Route>
-          <Route path='reports' element={<div>Reports</div>} />
-          <Route path='feedback' element={<div>Feedback</div>} />
           <Route path='customers' element={<Customers />} />
           <Route path='customers/:customerId' element={<CustomerDetails />} />
         </Route>

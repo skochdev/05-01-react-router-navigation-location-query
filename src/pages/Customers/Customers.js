@@ -2,11 +2,12 @@ import { useEffect, useMemo, useState } from 'react';
 import { getCustomers } from '../../fakeAPI';
 import * as S from './Customers.styled';
 import FilterCustomers from '../../components/FilterCustomers/FilterCustomers';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 
 const Customers = () => {
   const [customers, setCustomers] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
   const filterParam = searchParams.get('filter') ?? '';
 
   useEffect(() => {
@@ -29,9 +30,9 @@ const Customers = () => {
       {visibleCustomers && (
         <S.CustomersList>
           {visibleCustomers.map(({ name, id }) => (
-            <Link to={`${id}`} key={id}>
+            <S.CustomerLink to={`${id}`} state={{ from: location }} key={id}>
               {name}
-            </Link>
+            </S.CustomerLink>
           ))}
         </S.CustomersList>
       )}

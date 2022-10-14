@@ -3,6 +3,7 @@ import * as S from './Invoices.styled';
 import { Box } from '../Box/Box';
 import { getInvoices } from '../../fakeAPI';
 import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 
 export const Invoices = () => {
   const [invoices, setInvoices] = useState([]);
@@ -27,7 +28,9 @@ export const Invoices = () => {
           </S.NavItem>
         ))}
       </Box>
-      <Outlet />
+      <Suspense fallback={<h1>Invoices are loading...</h1>}>
+        <Outlet />
+      </Suspense>
     </Box>
   );
 };
